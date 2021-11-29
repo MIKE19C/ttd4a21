@@ -1,10 +1,10 @@
 function init() {
 
-var ruta = document.querySelector("[name=route]").value;
+//var ruta = document.querySelector("[name=route]").value;
 
-var apiMascota= ruta + '/apiMascota'    //'http:/localhost/ttd4a21/public/apiMascota';
+var apiMascota= 'http://localhost/ttd4a21/public/apiMascota'; //ruta + '/apiMascota'
 
-var apiEspecie= ruta + '/apiEspecie'   //'http://localhost/ttd4a21/public/apiEspecie';
+var apiEspecie= 'http://localhost/ttd4a21/public/apiEspecie'; //ruta + '/apiEspecie'
 
 
 new Vue({
@@ -65,7 +65,7 @@ new Vue({
         	this.edad='';
         	this.peso='';
         	this.genero='';
-        	this.id_especie='';
+        	//this.id_especie='';
 
         	$('#modalMascota').modal('show');
         },
@@ -151,6 +151,7 @@ new Vue({
 
         	this.$http.patch(apiMascota + '/' + this.id_mascota,jsonMascota).then(function(json){
         		this.obtenerMascotas();
+        		console.log(json.data);
 
         	});
         	$('#modalMascota').modal('hide');
@@ -165,10 +166,11 @@ new Vue({
 
         obtenerRazas(e){
         	    var id_especie=e.target.value;
-        		// console.log(id_especie);
+        		console.log(id_especie);
 
-        		this.$http.get(ruta + '/getRazas/' + id_especie ).then(function(j){
-        			this.raza=j.data;
+        		this.$http.get('http://localhost/ttd4a21/public/getRazas/' + id_especie ).then(function(j){
+        			this.razas=j.data;
+        			console.log(j.data);
         		});
 
         }
@@ -201,5 +203,5 @@ new Vue({
 
     
 
-})
+});
 } window.onload = init;
