@@ -71,7 +71,7 @@ class MascotaController extends Controller
         $mascota->id_especie=$request->get('id_especie');
         $mascota->id_raza=$request->get('id_raza');
 
-        $mascota->update();
+        return $mascota->update();
        
 
     }
