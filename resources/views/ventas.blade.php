@@ -19,34 +19,68 @@
           </div><!--FIN DE COL-->
       </div><!--FIN DE ROW-->
 
-      <div class="row">
-        <div class="col-md-12">
-            <table class="table table-bordered">
-                <thead>
-                     <th>SKU</th>
-                     <th>PRODUCTO</th>
-                     <th>PRECIO</th>
-                     <th>CANTIDAD</th>
-                     <th>TOTAL</th>
-                </thead>
+      <div class="card">
+          <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead>
+                             <th style="background: #ffff66">SKU</th>
+                             <th style="background: #ffff66">PRODUCTO</th>
+                             <th style="background: #ffff66">PRECIO</th>
+                             <th style="background: #ffff66">CANTIDAD</th>
+                             <th style="background: #ffff66">TOTAL</th>
+                        </thead>
 
-                <tbody>
-                    <tr v-for="(venta,index) in ventas">
-                        <td>@{{venta.sku}}</td>
-                        <td>@{{venta.nombre}}</td>
-                        <td>@{{venta.precio}}</td>
-                        <td><input type="number" v-model.number="cantidades[index]" min="1"></td>
-                        <td>@{{venta.total}}</td>
+                        <tbody>
+                            <tr v-for="(venta,index) in ventas">
+                                <td>@{{venta.sku}}</td>
+                                <td>@{{venta.nombre}}</td>
+                                <td>@{{venta.precio}}</td>
+                                <td><input type="number" v-model.number="cantidades[index]" min="1"></td>
+                                <td>@{{venta.total}}</td>
 
+                            </tr>
+                        </tbody>
+                    </table>
+                    @{{cantidades}}
+                </div>
+              </div>
+              <!--FIN DEL ROW -->
+        </div>   
+        <!--FIN DEL CARD BODY--> 
+</div>       
+<!--FIN DEL CARD--> 
+
+<div class="row">
+  <div class="col-md-8"></div>
+
+      <div class="card">
+          <div class="card-body">
+             <div class="col-md-4">
+                  <table class="table table-bordered table-condensed">
+                    <tr>
+                         <th style="background: #ffff66">Subtotal</th>
+                         <td>$ SUBTOTAL</td>
                     </tr>
-                </tbody>
-            </table>
-            @{{cantidades}}
-        </div>
-      </div>
-        
-    </div><!--FIN DE CONTAINER-->
 
+                    <tr>
+                        <th style="background: #ffff66">IVA</th>
+                        <td>$ IVA</td>
+                    </tr>
+
+                    <tr>
+                      <th style="background: #ffff66">TOTAL</th>
+                      <td>$ SUMATOTAL
+                    </tr>
+              
+                  </table>
+             </div>
+          </div>
+        </div>
+
+    </div><!--FIN DE CONTAINER-->
+</div>
 </div><!--FIN DE VUE-->  
 
 @endsection
