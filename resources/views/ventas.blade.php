@@ -76,9 +76,14 @@
 
                       <tr>
                         <th style="background: #ffff66">TOTAL</th>
-                        <td><br>$ @{{granTotal}}</td>
+                        <td><b>$ @{{granTotal}}</b></td>
                       </tr>
-                
+
+                      <tr>
+                        <th style="background: #ffff66">Articulos :</th>
+                        <td>@{{noArticulos}}</td>
+                      </tr>
+
                     </table>
                
             </div>
