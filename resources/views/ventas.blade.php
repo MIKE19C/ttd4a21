@@ -43,7 +43,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    @{{cantidades}}
+
                 </div>
               </div>
               <!--FIN DEL ROW -->
@@ -51,34 +51,39 @@
         <!--FIN DEL CARD BODY--> 
 </div>       
 <!--FIN DEL CARD--> 
+@{{cantidades}}
 
 <div class="row">
   <div class="col-md-8"></div>
 
-      <div class="card">
-          <div class="card-body">
-             <div class="col-md-4">
-                  <table class="table table-bordered table-condensed">
-                    <tr>
-                         <th style="background: #ffff66">Subtotal</th>
-                         <td>$ SUBTOTAL</td>
-                    </tr>
+      <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+               
+                    <table class="table table-bordered table-condensed">
+                      <tr>
+                           <th style="background: #ffff66">Subtotal</th>
+                           <td>$ SUBTOTAL</td>
+                      </tr>
 
-                    <tr>
-                        <th style="background: #ffff66">IVA</th>
-                        <td>$ IVA</td>
-                    </tr>
+                      <tr>
+                          <th style="background: #ffff66">IVA</th>
+                          <td>$ IVA</td>
+                      </tr>
 
-                    <tr>
-                      <th style="background: #ffff66">TOTAL</th>
-                      <td>$ SUMATOTAL
-                    </tr>
-              
-                  </table>
-             </div>
+                      <tr>
+                        <th style="background: #ffff66">TOTAL</th>
+                        <td>$ SUMATOTAL
+                      </tr>
+                
+                    </table>
+               
+            </div>
+            <!-- FIN DEL CARD BODY -->
           </div>
-        </div>
-
+          <!-- FIN DEL CARD -->
+      </div>
+      <!-- FIN DEL COL-MD-4 -->
     </div><!--FIN DE CONTAINER-->
 </div>
 </div><!--FIN DE VUE-->  
