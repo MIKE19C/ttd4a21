@@ -95,6 +95,12 @@ new Vue({
       var auxIva=0;
       auxIva = this.auxSubTotal*0.16;
       return auxIva.toFixed(1);
+    },
+
+    granTotal(){
+      var auxTotal=0;
+      auxTotal=this.auxSubTotal*1.16;
+      return auxTotal.toFixed(1);
     }
 
 
