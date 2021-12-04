@@ -38,7 +38,7 @@
                                 <td>@{{venta.nombre}}</td>
                                 <td>@{{venta.precio}}</td>
                                 <td><input type="number" v-model.number="cantidades[index]" min="1"></td>
-                                <td>@{{venta.total}}</td>
+                                <td>@{{totalProducto(index)}}</td>
 
                             </tr>
                         </tbody>
@@ -51,7 +51,10 @@
         <!--FIN DEL CARD BODY--> 
 </div>       
 <!--FIN DEL CARD--> 
+
 @{{cantidades}}
+<hr>
+@{{ventas}}
 
 <div class="row">
   <div class="col-md-8"></div>

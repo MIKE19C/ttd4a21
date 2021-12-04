@@ -41,7 +41,7 @@ new Vue({
                   nombre:j.data.nombre,
                   precio:j.data.precio,
                   cantidad:1,
-                  total:j.data.precio
+                  total:j.data.precio,
              };
 
             
@@ -58,10 +58,19 @@ new Vue({
     //FIN DE methods
 
 	computed:{
+    totalProducto(){
+        return (id)=>{
+            var total =0;
+            if (this.cantidad[id]!=null)
+                total=this.ventas[id].precio * this.cantidad[id];
+            return total.toFixed(1);
+        }
 
-	},
-})
+    },
 
+	}
+
+});
 
 
 } window.onload = init;
