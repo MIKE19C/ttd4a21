@@ -33,26 +33,30 @@ new Vue({
 		
       buscarProducto:function(){
 
-        if (this.sku)
-        {  
+        //if (this.sku)
+        //{  
         var producto = {}
           this.$http.get(apiProducto + '/' + this.sku).then(function(j){
+            this.producto=j.data;
+
              producto = {
                   sku:j.data.sku,
                   nombre:j.data.nombre,
                   precio:j.data.precio_venta,
                   cantidad:1,
-                  total:j.data.precio_venta,
-             };
+                  total:j.data.precio_venta};
 
-            
+            if (this.producto)
                  this.ventas.push(producto);
-                 this.cantidades.push(1);
-             this.sku='';
-          });
-        }
-      }
 
+             this.sku="";
+          })
+       // }
+      },
+
+      eliminarProducto:function(id){
+          this.ventas.splice(id,1)
+      }
 
 
 	},
