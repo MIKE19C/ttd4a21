@@ -39,9 +39,9 @@ new Vue({
              producto = {
                   sku:j.data.sku,
                   nombre:j.data.nombre,
-                  precio:j.data.precio,
+                  precio:j.data.precio_venta,
                   cantidad:1,
-                  total:j.data.precio,
+                  total:j.data.precio_venta,
              };
 
             
@@ -60,15 +60,37 @@ new Vue({
 	computed:{
     totalProducto(){
         return (id)=>{
-            var total =0;
+            var total=0;
             if (this.cantidad[id]!=null)
-                total=this.ventas[id].precio * this.cantidad[id];
+                total=this.ventas[id].precio_venta * this.cantidad[id];
+
+                //Actualizo el total del producto en el array ventas
+                this.ventas[id].total=total;
+                //Actualizo la cantidad en el array ventas
+                this.ventas[id].cantidad=this.cantidades[id];
+
             return total.toFixed(1);
+
         }
 
+
     },
+    //Fin de TotalProducto
+
+    subTotal(){
+
+      var total=0;
+
+      for (var i = this.ventas.length - 1; i >= 0; i--) {
+        total=total+this.ventas[i].total;
+      }
+
+      return total.toFixed(1);
+    }
+
 
 	}
+  //FIN DEL COMPUTED
 
 });
 

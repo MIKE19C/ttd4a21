@@ -66,7 +66,7 @@
                     <table class="table table-bordered table-condensed">
                       <tr>
                            <th style="background: #ffff66">Subtotal</th>
-                           <td>$ SUBTOTAL</td>
+                           <td>$ @{{subTotal}}</td>
                       </tr>
 
                       <tr>
