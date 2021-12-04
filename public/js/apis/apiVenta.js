@@ -17,6 +17,7 @@ new Vue({
 		sku:'',
     ventas:[],
     cantidades:[1,1,1,1,1,1,1,1,1,1],
+    auxSubTotal:0,
     cant:1,
 
 
@@ -62,7 +63,7 @@ new Vue({
         return (id)=>{
             var total=0;
             if (this.cantidad[id]!=null)
-                total=this.ventas[id].precio_venta * this.cantidad[id];
+                total=this.ventas[id].precio_venta * this.cantidades[id];
 
                 //Actualizo el total del producto en el array ventas
                 this.ventas[id].total=total;
@@ -84,9 +85,19 @@ new Vue({
       for (var i = this.ventas.length - 1; i >= 0; i--) {
         total=total+this.ventas[i].total;
       }
-
+      // Mando una copia del SubTotal a la seccion del data 
+      // para el uso de otros calculos
+      this.auxSubTotal=total.toFixed(1);
       return total.toFixed(1);
+      },
+
+    iva(){
+      var auxIva=0;
+      auxIva = this.auxSubTotal*0.16;
+      return auxIva.toFixed(1);
     }
+
+
 
 
 	}
