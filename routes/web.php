@@ -68,3 +68,19 @@ Route::get('getRazas/{id_especie}', [
 	'as' => 'getRazas',
 	'uses' => 'EspecieController@getRazas',
 ]);
+
+// app/Http/routes.php | app/routes/web.php
+
+Route::get('pdf', function (Codedge\Fpdf\Fpdf\Fpdf $fpdf) {
+
+    $fpdf->AddPage();
+    $fpdf->SetFont('Courier', 'B', 18);
+    $fpdf->Cell(50, 25, 'Hello World!');
+    $fpdf->Output();
+    exit;
+
+});
+
+Route::get('prueba','pdfController@prueba');
+
+Route::get('pdf','ReporteController@pdf');
