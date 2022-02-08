@@ -5,18 +5,7 @@
     <!-- INICIA VUE -->
     <div id="mascota">
 
-    	<!--<div class="row">
-    		<div class="col-md-8">
-    			<input type="number" placeholder="cantidad" class="form-control" v-model="cantidad"><br>
-    			<input type="number" placeholder="precio" class="form-control" v-model="precio"><br>
-
-
-    			<h5>TOTAL: @{{total}}</h5>
-
-    		</div>	
-    	</div>
-
--->
+    	
 
 
 <div class="row">
@@ -157,3 +146,5 @@
     <script type="text/javascript" src="js/vue-resource.js"></script>
     <script type="text/javascript" src="js/apis/mascotas.js"></script>
 @endpush
+
+<input type="hidden" name="route" value="{{url('/')}}">
