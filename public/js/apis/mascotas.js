@@ -1,10 +1,10 @@
 function init() {
 
-//var ruta = document.querySelector("[name=route]").value;
+var ruta = document.querySelector("[name=route]").value;
 
-var apiMascota= 'http://localhost/ttd4a21/public/apiMascota'; //ruta + '/apiMascota'
+var apiMascota= ruta + '/apiMascota';
 
-var apiEspecie= 'http://localhost/ttd4a21/public/apiEspecie'; //ruta + '/apiEspecie'
+var apiEspecie= ruta + '/apiEspecie';
 
 
 new Vue({
